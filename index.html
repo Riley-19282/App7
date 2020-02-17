@@ -6,8 +6,7 @@ THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
  
  
 Authors in chronological order of contribution:
-Author 1
-Author 2
+Riley Garrett
  
 Further Information:
 http://diystream.cns.utexas.edu/
@@ -17,15 +16,197 @@ Timothy Riedel
 triedel@utexas.edu
  
 Brief Description of Goal of Code:
-blah, blah, blah,
+This code is intended to develop a diagnostic test to help users differenciate between a sore throat and strep throat. 
+There will be four questions asked, each answer will be stored and the final page will show the user the likelyhood they have either a sore throat or strep throat.
  
 Known Issues:
-blah, blah, blah, blah
+Need to add picture
+Maybe change calculations to be percents instead of fractions? 
 -->
 
    <head> 
-      
-	   PUT YOUR OLD CODE IN HERE
-	   
-   </body>
+      <title>Hello World</title>  
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <link rel="stylesheet" href="w3.css">
+      <link rel="stylesheet" href="w3-colors-flat.css">
+   </head> 
+
+
+<script>
+	
+// The following code lets you know when the file was last modified.
+// This will help you know if you are looking at the new version of the file or if there is a delay on GitHub.
+       var docMod = document.lastModified;
+       alert("This file last modified  " + docMod);
+       console.log("This file last modified  " + docMod);
+// If you find the alert box annoying, comment out that line and timestamp will still show up in the debugging console
+
+        var strep_count = 0;
+        var sore_count = 0;
+/* the "var" statements above should allow the app to keep a record of each time the user adds to the cold or allergy count by answering yes or no 
+The zero placed after allows the count to return to zero */
+
+        function strepAdd(){
+            strep_count = strep_count + 1;
+
+        }
+
+        function soreAdd(){
+            sore_count = sore_count + 1;
+        }
+/* The functions above are run after a yes or no click and will increase the count by one each time */
+	
+	function resultPercentage() {
+		var strepPercent = strep_count + "/4";
+		var sorePercent = sore_count + "/4";
+		var resultText = document.getElementById("results");
+		resultText.innerHTML = "Probability it is strep throat = " + strepPercent + "<br> Probability it is a sore throat = " + sorePercent;
+		
+	}
+/* The results functions adds up the total number of allergy counts and cold counts and displays them out of the total (six).
+The result document allows the app to calculate and display the results from the questions on the eight page
+The getElementby shows the results once the results buttton is clicked*/
+
+  </script>
+
+
+
+<style>	
+.body {
+     margin: 0em;
+}
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    overflow-y: auto;
+    z-index: 0;
+    background-color: hsl(0,0%,100%);
+}
+
+  .page:target {
+    left: 0vw;
+    z-index: 1;
+}
+/* Inside the style markers code for the app to display pages within the html body */
+</style>
+
+<body>
+<div id="header" class="w3-container w3-flat-carrot">
+	<h1>Sore Throat or Strep Throat?</h1>
+<!-- The header for the opening page is "Sore Throat or Strep Throat?" -->
+</div>
+	
+<div id="content" class="w3-container">
+	<p>Are you feeling like you might have strep throat but wonder if it is just a sore throat? Answer a few short questions to find out!</p>
+<!-- The above sentence is in the body or description in the header above -->
+	<p>Strep and a sore throat often present similar symptoms, but a sore throat is caused by a virus while strep is caused by a bacterial infection. Because of this it is very important to determine which one you have in order to properly recive treatment!</p>
+<!-- This adds another paragraph below the inital question -->
+	
+	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
+<!-- This codes for a button labeled "Get Started" to appear on the page and directed the user to page one once clicked -->
+	
+	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
+ 	
+	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
+<!-- The two line above should be seperate paragraphs writting out the statements -->
+
+<div class="page" id="one">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 1</h1>
+	</div>
+	
+    	<div id="content" class="w3-container">
+        <p>Do you have swollen tonsils with white patches on your tonsils or throat?</p>
+<!-- The statement above is the first question that the user will be asked -->
+	<a href="#two" onclick="strepAdd();" class="w3-btn w3-black">Yes</a>
+	<a href="#two" onclick="soreAdd();" class="w3-btn w3-black">No</a>
+<!-- The two lines above use JavaScript (onclick) to communicate to store the response and direct the user to page two. the section "class="w3-btn w3-black" codes for the yes/no options to look like buttons -->
+<!-- The #two codes for the program to move to page two -->
+    	</div>
+</div>
+
+<div class="page" id="two">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 2</h1>
+<!-- Above constructs page two with header of "Question 2" -->
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Do you have a cold, a runny nose, and/or congestion?</p>
+<!-- Question 2 is as stated above -->
+		<a href="#three" onclick="soreAdd();" class="w3-btn w3-black">Yes</a>
+		<a href="#three" onclick="strepAdd();" class="w3-btn w3-black">No</a>
+<!-- The above lines use JavaScript to store the response to question 2 and direct the user to page three -->
+	</div>
+</div>	
+
+<div class="page" id="three">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 3</h1>
+<!-- Page three is constructed with header "Question 3" -->
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Are you experiencing hoarseness or a cough?</p>
+		<a href="#four" onclick="soreAdd();" class="w3-btn w3-black">Yes</a>
+		<a href="#four" onclick="strepAdd();" class="w3-btn w3-black">No</a>
+<!-- Question 3 is now stated and responding "yes" or "no" will be stored and directed to page four -->
+	</div>
+</div>
+	
+<div class="page" id="four">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 4</h1>
+<!-- Page four is now constructed with header "Question 4" -->
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Has the pain presisted for more than a couple days?</p>
+		<a href="#five" onclick="strepAdd();" class="w3-btn w3-black">Yes</a>
+		<a href="#five" onclick="soreAdd();" class="w3-btn w3-black">No</a>
+<!-- Question four reads as stated between <p></p> and yes/no response will look lilke buttons, be stored, and program will move to the fith page -->
+	</div>
+</div>
+	
+<div class="page" id="five">
+	<div class="w3-container w3-flat-carrot">
+		<h1>All Done!</h1>
+<!-- Page five has a header of "All Done!" -->
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Results Here</p>
+		<a href="#six" onclick="resultPercentage();" class="w3-btn w3-black">Get Results!</a>
+<!-- This adds a button that reads "Get Results!" that once clicks calculates results and moves to page six -->
+	</div>
+</div>
+
+<div class="page" id="six">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Results</h1>
+<!-- This produces page six with title "Results" -->
+	</div>
+	
+	<div id="content" class="w3-container">
+<!-- This is the results -->
+		<p id="results">
+		</p>
+		
+	</div>
+</div>
+		
+<footer class="w3-bottom w3-container w3-flat-carrot">
+	<p>DIY!</p>
+	<!-- This places "DIY!" footer at the end of every page -->
+</footer>
+<!-- This closes the code for the footer of the page -->
+	</body>
+<!-- This closes the code for the body of the page -->
 </html>
+	   
+
