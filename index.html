@@ -16,14 +16,11 @@ Timothy Riedel
 triedel@utexas.edu
  
 Brief Description of Goal of Code:
-This code is intended to develop a diagnostic test to help users differenciate between a sore throat and strep throat. 
-There will be four questions asked, each answer will be stored and the final page will show the user the likelyhood they have either a sore throat or strep throat.
+This code is intended to develop a diagnostic test to help users determine if they have COVID 19. 
+There will be four questions asked, each answer will be stored and the final page will show the user the percent they match with each, COVID 19, flu, cold, or allergies.
  
 Known Issues:
-Picture not appearing FIXED 
-Maybe change calculations to be percents instead of fractions? 
-Results not showing FIXED
-Grammar/ spelling on first page FIXED
+
 -->
 
    <head> 
@@ -103,15 +100,13 @@ img, object{
 
 <body>
 <div id="header" class="w3-container w3-flat-carrot">
-	<h1>Sore Throat or Strep Throat?</h1>
-<!-- The header for the opening page is "Sore Throat or Strep Throat?" -->
+	<h1>Do you have symptoms of COVID-19?</h1>
+<!-- The header for the opening page is "Do you have symptoms of COVID-19?" -->
 </div>
 	
 <div id="content" class="w3-container">
-	<p>Are you feeling like you might have strep throat but wonder if it's just a sore throat? Answer a few short questions to find out!</p>
+	<p>Are you concerned you might have COVID-19 but wonder if it's just a cold, allergies, or the flu? Answer a few short questions to find out!</p>
 <!-- The above sentence is in the body or description in the header above -->
-	<p>A sore throat and strep often present similar symptoms, but a sore throat is caused by a virus while strep is caused by a bacterial infection. Because of this it is very important to determine which one you have in order to properly receive treatment!</p>
-<!-- This adds another paragraph below the inital question -->
 	
 	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
 <!-- This codes for a button labeled "Get Started" to appear on the page and directed the user to page one once clicked -->
@@ -128,7 +123,7 @@ img, object{
 	</div>
 	
     	<div id="content" class="w3-container">
-        <p>Do you have swollen tonsils with white patches on your tonsils or throat?</p>
+        <p>Do you have a dry cough?</p>
 <!-- The statement above is the first question that the user will be asked -->
 	<a href="#two" onclick="strepAdd();" class="w3-btn w3-black">Yes</a>
 	<a href="#two" onclick="soreAdd();" class="w3-btn w3-black">No</a>
@@ -149,7 +144,7 @@ img, object{
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Do you have a cold, a runny nose, and/or congestion?</p>
+		<p>Do you have shortness of breath?</p>
 <!-- Question 2 is as stated above -->
 		<a href="#three" onclick="soreAdd();" class="w3-btn w3-black">Yes</a>
 		<a href="#three" onclick="strepAdd();" class="w3-btn w3-black">No</a>
@@ -164,7 +159,7 @@ img, object{
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Are you experiencing hoarseness or a cough?</p>
+		<p>Are you sneezing frequently?</p>
 		<a href="#four" onclick="soreAdd();" class="w3-btn w3-black">Yes</a>
 		<a href="#four" onclick="strepAdd();" class="w3-btn w3-black">No</a>
 <!-- Question 3 is now stated and responding "yes" or "no" will be stored and directed to page four -->
@@ -178,9 +173,65 @@ img, object{
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Has the pain presisted for more than a couple days?</p>
+		<p>Do you have a stuffy or runny nose?</p>
 		<a href="#five" onclick="strepAdd();" class="w3-btn w3-black">Yes</a>
 		<a href="#five" onclick="soreAdd();" class="w3-btn w3-black">No</a>
+<!-- Question four reads as stated between <p></p> and yes/no response will look lilke buttons, be stored, and program will move to the fith page -->
+	</div>
+</div>
+	
+<div class="page" id="five">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 5</h1>
+<!-- Page four is now constructed with header "Question 4" -->
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Do you have a sore throat?</p>
+		<a href="#six" onclick="strepAdd();" class="w3-btn w3-black">Yes</a>
+		<a href="#six" onclick="soreAdd();" class="w3-btn w3-black">No</a>
+<!-- Question four reads as stated between <p></p> and yes/no response will look lilke buttons, be stored, and program will move to the fith page -->
+	</div>
+</div>
+
+<div class="page" id="six">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 6</h1>
+<!-- Page four is now constructed with header "Question 4" -->
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Do you have a fever?</p>
+		<a href="#seven" onclick="strepAdd();" class="w3-btn w3-black">Yes</a>
+		<a href="#seven" onclick="soreAdd();" class="w3-btn w3-black">No</a>
+<!-- Question four reads as stated between <p></p> and yes/no response will look lilke buttons, be stored, and program will move to the fith page -->
+	</div>
+</div>
+
+<div class="page" id="seven">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 7</h1>
+<!-- Page four is now constructed with header "Question 4" -->
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Are you feeling tired and weak?</p>
+		<a href="#eight" onclick="strepAdd();" class="w3-btn w3-black">Yes</a>
+		<a href="#eight" onclick="soreAdd();" class="w3-btn w3-black">No</a>
+<!-- Question four reads as stated between <p></p> and yes/no response will look lilke buttons, be stored, and program will move to the fith page -->
+	</div>
+</div>
+
+<div class="page" id="eight">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 8</h1>
+<!-- Page four is now constructed with header "Question 4" -->
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Have you been experiencing headaches?</p>
+		<a href="#nine" onclick="strepAdd();" class="w3-btn w3-black">Yes</a>
+		<a href="#nine" onclick="soreAdd();" class="w3-btn w3-black">No</a>
 <!-- Question four reads as stated between <p></p> and yes/no response will look lilke buttons, be stored, and program will move to the fith page -->
 	</div>
 </div>
