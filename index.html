@@ -20,7 +20,7 @@ This code is intended to develop a diagnostic test to help users determine if th
 There will be four questions asked, each answer will be stored and the final page will show the user the percent they match with each, COVID 19, flu, cold, or allergies.
  
 Known Issues:
-results not showing FIXED - need to restrict decimals
+results not showing FIXED 
 
 -->
 
@@ -72,22 +72,13 @@ The zero placed after allows the count to return to zero */
 		var allergiesPercent = (allergies_count / 11) * 100;
 		var covidPercent = (covid_count / 11) * 100;
 		var resultText = document.getElementById("results");
-		resultText.innerHTML = "Probability it is a cold = " + coldPercent + "<br> Probability it is the flu = " + fluPercent + "<br> Probability it is allergies = " + allergiesPercent + "<br> Probability it is COVID-19 = " + covidPercent;
+		resultText.innerHTML = "Percent chance it is a cold = " + coldPercent + "<br> Percent chance it is the flu = " + fluPercent + "<br> Percent chance it is allergies = " + allergiesPercent + "<br> Percent chance it is COVID-19 = " + covidPercent;
 		
 	}
 /* The results functions adds up the total number of counts, divides by the total and multiplies by 100.
 The result document allows the app to calculate and display the results from the questions on the 13th page
 The getElementby shows the results once the results buttton is clicked*/
 
-	let coldDecimal = coldPercent.toFixed(2);
-	coldDecimal;
-	let fluDecimal = fluPercent.toFixed(2);
-	fluDecimal;
-	let allergiesDecimal = allergiesPercent.toFixed(2);
-	allergiesDecimal;
-	let covidDecimal = covidPercent.toFixed(2);
-	covidDecimal;
-/* the above text sets the max decimals to two places */
   </script>
 
 <style>	
