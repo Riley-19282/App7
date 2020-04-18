@@ -67,10 +67,10 @@ The zero placed after allows the count to return to zero */
 /* The functions above are run after a click and will increase the count by one each time */
 	
 	function resultPercentage(){
-		var coldPercent = (Number(cold_count)/11) * 100";
-		var fluPercent = (Number(flu_count)/11) * 100";
-		var allergiesPercent = (Number(allergies_count)/11) * 100";
-		var covidPercent = (Number(covid_count)/11) * 100";
+		var coldPercent = (cold_count  / 11) * 100;
+		var fluPercent = (flu_count / 11) * 100;
+		var allergiesPercent = (allergies_count / 11) * 100;
+		var covidPercent = (covid_count / 11) * 100;
 		var resultText = document.getElementById("results");
 		resultText.innerHTML = "Probability it is a cold = " + coldPercent + "<br> Probability it is the flu = " + fluPercent + "<br> Probability it is allergies = " + allergiesPercent + "<br> Probability it is COVID-19 = " + covidPercent;
 		
