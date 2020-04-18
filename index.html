@@ -41,20 +41,29 @@ Known Issues:
        console.log("This file last modified  " + docMod);
 // If you find the alert box annoying, comment out that line and timestamp will still show up in the debugging console
 
-        var strep_count = 0;
-        var sore_count = 0;
+        var cold_count = 0;
+        var flu_count = 0;
+	var allergies_count = 0;
+	var COVID_count = 0;
 /* the "var" statements above should allow the app to keep a record of each time the user adds to the cold or allergy count by answering yes or no 
 The zero placed after allows the count to return to zero */
 
-        function strepAdd(){
-            strep_count = strep_count + 1;
-
+        function coldAdd(){
+            cold_count = cold_count + 1;
         }
 
-        function soreAdd(){
-            sore_count = sore_count + 1;
+        function fluAdd(){
+            flu_count = flu_count + 1;
         }
-/* The functions above are run after a yes or no click and will increase the count by one each time */
+	
+	function allergiesAdd(){
+		allergies_count = allergies_count + 1;
+	}
+	
+	function COVIDAdd(){
+		COVID_count = COVID_count + 1;
+	}
+/* The functions above are run after a click and will increase the count by one each time */
 	
 	function resultPercentage(){
 		var strepPercent = strep_count + "/4";
@@ -125,8 +134,8 @@ img, object{
     	<div id="content" class="w3-container">
         <p>Do you have a dry cough?</p>
 <!-- The statement above is the first question that the user will be asked -->
-	<a href="#two" onclick="strepAdd();" class="w3-btn w3-black">Yes</a>
-	<a href="#two" onclick="soreAdd();" class="w3-btn w3-black">No</a>
+	<a href="#two" onclick="coldAdd();" onclick="fluAdd();" onclick="COVIDAdd();" class="w3-btn w3-black">Yes</a>
+	<a href="#two" onclick="allergiesAdd();" class="w3-btn w3-black">No</a>
 <!-- The two lines above use JavaScript (onclick) to communicate to store the response and direct the user to page two. the section "class="w3-btn w3-black" codes for the yes/no options to look like buttons -->
 <!-- The #two codes for the program to move to page two -->
 	<center>
@@ -146,8 +155,8 @@ img, object{
 	<div id="content" class="w3-container">
 		<p>Do you have shortness of breath?</p>
 <!-- Question 2 is as stated above -->
-		<a href="#three" onclick="soreAdd();" class="w3-btn w3-black">Yes</a>
-		<a href="#three" onclick="strepAdd();" class="w3-btn w3-black">No</a>
+		<a href="#three" onclick="COVIDAdd();" class="w3-btn w3-black">Yes</a>
+		<a href="#three" onclick="allergiesAdd();" onclick="coldAdd();"onclick="fluAdd();" class="w3-btn w3-black">No</a>
 <!-- The above lines use JavaScript to store the response to question 2 and direct the user to page three -->
 	</div>
 </div>	
@@ -160,8 +169,8 @@ img, object{
 	
 	<div id="content" class="w3-container">
 		<p>Are you sneezing frequently?</p>
-		<a href="#four" onclick="soreAdd();" class="w3-btn w3-black">Yes</a>
-		<a href="#four" onclick="strepAdd();" class="w3-btn w3-black">No</a>
+		<a href="#four" onclick="coldAdd();" onclick="allergiesAdd();" class="w3-btn w3-black">Yes</a>
+		<a href="#four" onclick="COVIDAdd();" onclick="fluAdd();" class="w3-btn w3-black">No</a>
 <!-- Question 3 is now stated and responding "yes" or "no" will be stored and directed to page four -->
 	</div>
 </div>
@@ -174,8 +183,8 @@ img, object{
 	
 	<div id="content" class="w3-container">
 		<p>Do you have a stuffy or runny nose?</p>
-		<a href="#five" onclick="strepAdd();" class="w3-btn w3-black">Yes</a>
-		<a href="#five" onclick="soreAdd();" class="w3-btn w3-black">No</a>
+		<a href="#five" onclick="fluAdd();" onclick="coldAdd();" onclick="allergiesAdd();" class="w3-btn w3-black">Yes</a>
+		<a href="#five" onclick="COVIDAdd();" class="w3-btn w3-black">No</a>
 <!-- Question four reads as stated between <p></p> and yes/no response will look lilke buttons, be stored, and program will move to the fith page -->
 	</div>
 </div>
@@ -188,8 +197,8 @@ img, object{
 	
 	<div id="content" class="w3-container">
 		<p>Do you have a sore throat?</p>
-		<a href="#six" onclick="strepAdd();" class="w3-btn w3-black">Yes</a>
-		<a href="#six" onclick="soreAdd();" class="w3-btn w3-black">No</a>
+		<a href="#six" onclick="COVIDAdd();" onclick="coldAdd();" onclick="fluAdd();" class="w3-btn w3-black">Yes</a>
+		<a href="#six" onclick="allergiesAdd();" class="w3-btn w3-black">Mild</a>
 <!-- Question four reads as stated between <p></p> and yes/no response will look lilke buttons, be stored, and program will move to the fith page -->
 	</div>
 </div>
@@ -202,8 +211,9 @@ img, object{
 	
 	<div id="content" class="w3-container">
 		<p>Do you have a fever?</p>
-		<a href="#seven" onclick="strepAdd();" class="w3-btn w3-black">Yes</a>
-		<a href="#seven" onclick="soreAdd();" class="w3-btn w3-black">No</a>
+		<a href="#seven" onclick="coldAdd();" class="w3-btn w3-black">Yes, for a short time</a>
+		<a href="#seven" onclick="fluAdd();" onclick="COVIDAdd();" class="w3-btn w3-black">Yes, for a while</a>
+		<a href="#seven" onclick="allergiesAdd();" class="w3-btn w3-black">No</a>
 <!-- Question four reads as stated between <p></p> and yes/no response will look lilke buttons, be stored, and program will move to the fith page -->
 	</div>
 </div>
@@ -216,8 +226,8 @@ img, object{
 	
 	<div id="content" class="w3-container">
 		<p>Are you feeling tired and weak?</p>
-		<a href="#eight" onclick="strepAdd();" class="w3-btn w3-black">Yes</a>
-		<a href="#eight" onclick="soreAdd();" class="w3-btn w3-black">No</a>
+		<a href="#eight" onclick="fluAdd();" "coldAdd();" onclick="allergiesAdd();" onclick="COVIDAdd();" class="w3-btn w3-black">Yes</a>
+		<a href="#eight" "coldAdd();" onclick="allergiesAdd();" onclick="COVIDAdd();" class="w3-btn w3-black">No</a>
 <!-- Question four reads as stated between <p></p> and yes/no response will look lilke buttons, be stored, and program will move to the fith page -->
 	</div>
 </div>
@@ -230,13 +240,56 @@ img, object{
 	
 	<div id="content" class="w3-container">
 		<p>Have you been experiencing headaches?</p>
-		<a href="#nine" onclick="strepAdd();" class="w3-btn w3-black">Yes</a>
-		<a href="#nine" onclick="soreAdd();" class="w3-btn w3-black">No</a>
+		<a href="#nine" onclick="fluAdd();" onclick="COVIDAdd();" class="w3-btn w3-black">Yes</a>
+		<a href="#nine" onclick="allergiesAdd();" class="w3-btn w3-black">Yes, from sinus pain</a>
+		<a href="#nine" onclick="coldAdd();" onclick="COVIDAdd();" class="w3-btn w3-black">No</a>
 <!-- Question four reads as stated between <p></p> and yes/no response will look lilke buttons, be stored, and program will move to the fith page -->
 	</div>
 </div>
 	
-<div class="page" id="five">
+<div class="page" id="nine">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 9</h1>
+<!-- Page four is now constructed with header "Question 4" -->
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Do you have body aches and pains?</p>
+		<a href="#ten" onclick="coldAdd();" onclick="fluAdd();" onclick="COVIDAdd();" class="w3-btn w3-black">Yes</a>
+		<a href="#ten" onclick="allergiesAdd();" onclick="COVIDAdd();" class="w3-btn w3-black">No</a>
+<!-- Question four reads as stated between <p></p> and yes/no response will look lilke buttons, be stored, and program will move to the fith page -->
+	</div>
+	
+<div class="page" id="ten">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 10</h1>
+<!-- Page four is now constructed with header "Question 4" -->
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Have you been experiencing diarrhea?</p>
+		<a href="#eleven" onclick="fluAdd();" class="w3-btn w3-black">Yes and I am a child</a>
+		<a href="#eleven" onclick="COVIDAdd();" class="w3-btn w3-black">Yes</a>
+		<a href="#eleven" onclick="coldAdd();" onclick="allergiesAdd();" onclick="COVIDAdd();" class="w3-btn w3-black">No</a>
+<!-- Question four reads as stated between <p></p> and yes/no response will look lilke buttons, be stored, and program will move to the fith page -->
+	</div>
+	
+<div class="page" id="eleven">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 11</h1>
+<!-- Page four is now constructed with header "Question 4" -->
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>How long have these symptoms persisted?</p>
+		<a href="#twelve" onclick="COVIDAdd();" class="w3-btn w3-black">7-25 days</a>
+		<a href="#twelve" onclick="coldAdd();" class="w3-btn w3-black">Less than 14 days</a>
+		<a href="#twelve" onclick="fluAdd();" class="w3-btn w3-black">7-14 days</a>
+		<a href="#twelve" onclick="allergiesAdd();" class="w3-btn w3-black">Several weeks</a>
+<!-- Question four reads as stated between <p></p> and yes/no response will look lilke buttons, be stored, and program will move to the fith page -->
+	</div>
+	
+<div class="page" id="twelve">
 	<div class="w3-container w3-flat-carrot">
 		<h1>All Done!</h1>
 <!-- Page five has a header of "All Done!" -->
@@ -245,12 +298,12 @@ img, object{
 	<div id="content" class="w3-container">
 		<p>Results Here</p>
 <!-- Page five has a tilte that says Resluts Here --> 
-		<a href="#six" onclick="resultPercentage();" class="w3-btn w3-black">Get Results!</a>
+		<a href="#thirteen" onclick="resultPercentage();" class="w3-btn w3-black">Get Results!</a>
 <!-- This adds a button that reads "Get Results!" that once clicks calculates results and moves to page six -->
 	</div>
 </div>
 
-<div class="page" id="six">
+<div class="page" id="thirteen">
 	<div class="w3-container w3-flat-carrot">
 		<h1>Results</h1>
 <!-- This produces page six with title "Results" -->
