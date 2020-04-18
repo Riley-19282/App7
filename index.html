@@ -20,7 +20,7 @@ This code is intended to develop a diagnostic test to help users determine if th
 There will be four questions asked, each answer will be stored and the final page will show the user the percent they match with each, COVID 19, flu, cold, or allergies.
  
 Known Issues:
-results just fractions
+results not showing
 
 -->
 
@@ -62,17 +62,17 @@ The zero placed after allows the count to return to zero */
 	}
 	
 	function covidAdd(){
-		covid_count = COVID_count + 1;
+		covid_count = covid_count + 1;
 	}
 /* The functions above are run after a click and will increase the count by one each time */
 	
 	function resultPercentage(){
-		var coldPercent = (cold_count/11)*100";
-		var fluPercent = (flu_count/11)*100";
-		var allergiesPercent = (allergies_count/11)*100";
-		var covidPercent = (covid_count/11)*100";
+		var coldPercent = (Number(cold_count)/11) * 100";
+		var fluPercent = (Number(flu_count)/11) * 100";
+		var allergiesPercent = (Number(allergies_count)/11) * 100";
+		var covidPercent = (Number(covid_count)/11) * 100";
 		var resultText = document.getElementById("results");
-		resultText.innerHTML = "Probability it is a cold = " + coldPercent + "<br> Probability it is the flu = " + fluPercent + "<br> Probability it is allergies = " + allergiesPercent + "<br> Probability it is COVID-19 =" + covidPercent;
+		resultText.innerHTML = "Probability it is a cold = " + coldPercent + "<br> Probability it is the flu = " + fluPercent + "<br> Probability it is allergies = " + allergiesPercent + "<br> Probability it is COVID-19 = " + covidPercent;
 		
 	}
 /* The results functions adds up the total number of counts, divides by the total and multiplies by 100.
