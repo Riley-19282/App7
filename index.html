@@ -45,7 +45,7 @@ Known Issues:
         var flu_count = 0;
 	var allergies_count = 0;
 	var COVID_count = 0;
-/* the "var" statements above should allow the app to keep a record of each time the user adds to the cold or allergy count by answering yes or no 
+/* the "var" statements above should allow the app to keep a record of each time the user adds to the count by answering yes or no 
 The zero placed after allows the count to return to zero */
 
         function coldAdd(){
@@ -66,10 +66,12 @@ The zero placed after allows the count to return to zero */
 /* The functions above are run after a click and will increase the count by one each time */
 	
 	function resultPercentage(){
-		var strepPercent = strep_count + "/4";
-		var sorePercent = sore_count + "/4";
+		var coldPercent = cold_count + "/11" + "*100";
+		var fluPercent = flu_count + "/11" + "*100";
+		var allergiesPercent = allergies_count + "/11" + "*100";
+		var COVIDPercent = COVID_count + "/11" + "*100";
 		var resultText = document.getElementById("results");
-		resultText.innerHTML = "Probability it is strep throat=" + strepPercent + "<br> Probability it is a sore throat=" + sorePercent;
+		resultText.innerHTML = "Probability it is a cold = " + coldPercent + "<br> Probability it is the flu = " + fluPercent + "<br> Probability it is allergies = " + allergiesPercent + "<br> Probability it is COVID-19 =" + COVIDPercent;
 		
 	}
 /* The results functions adds up the total number of allergy counts and cold counts and displays them out of the total (six).
@@ -138,11 +140,6 @@ img, object{
 	<a href="#two" onclick="allergiesAdd();" class="w3-btn w3-black">No</a>
 <!-- The two lines above use JavaScript (onclick) to communicate to store the response and direct the user to page two. the section "class="w3-btn w3-black" codes for the yes/no options to look like buttons -->
 <!-- The #two codes for the program to move to page two -->
-	<center>
-	<img src="https://cdn-prod.medicalnewstoday.com/content/images/articles/312/312433/strep-throat-br-image-credit-james-heilman-md-2010-september-29-br.jpg" 
-	alt="Strep Throat">
-	</center> 
-<!-- the src specifies the url of the image and the alt sets a description for the image if it cannot be loaded. The center tags place the image in the center of whichever screen -->
     	</div>
 </div>
 
@@ -184,7 +181,7 @@ img, object{
 	<div id="content" class="w3-container">
 		<p>Do you have a stuffy or runny nose?</p>
 		<a href="#five" onclick="fluAdd();" onclick="coldAdd();" onclick="allergiesAdd();" class="w3-btn w3-black">Yes</a>
-		<a href="#five" onclick="COVIDAdd();" class="w3-btn w3-black">No</a>
+		<a href="#five" onclick="COVIDAdd();" onclick="fluAdd();" class="w3-btn w3-black">No</a>
 <!-- Question four reads as stated between <p></p> and yes/no response will look lilke buttons, be stored, and program will move to the fith page -->
 	</div>
 </div>
@@ -199,6 +196,7 @@ img, object{
 		<p>Do you have a sore throat?</p>
 		<a href="#six" onclick="COVIDAdd();" onclick="coldAdd();" onclick="fluAdd();" class="w3-btn w3-black">Yes</a>
 		<a href="#six" onclick="allergiesAdd();" class="w3-btn w3-black">Mild</a>
+		<a href="#six" onclick="fluAdd();" onclick="COVIDAdd();" class="w3-btn w3-black">No</a>
 <!-- Question four reads as stated between <p></p> and yes/no response will look lilke buttons, be stored, and program will move to the fith page -->
 	</div>
 </div>
@@ -227,7 +225,7 @@ img, object{
 	<div id="content" class="w3-container">
 		<p>Are you feeling tired and weak?</p>
 		<a href="#eight" onclick="fluAdd();" "coldAdd();" onclick="allergiesAdd();" onclick="COVIDAdd();" class="w3-btn w3-black">Yes</a>
-		<a href="#eight" "coldAdd();" onclick="allergiesAdd();" onclick="COVIDAdd();" class="w3-btn w3-black">No</a>
+		<a href="#eight" onclick="coldAdd();" onclick="allergiesAdd();" onclick="COVIDAdd();" class="w3-btn w3-black">No</a>
 <!-- Question four reads as stated between <p></p> and yes/no response will look lilke buttons, be stored, and program will move to the fith page -->
 	</div>
 </div>
@@ -314,8 +312,8 @@ img, object{
 		<p id="results">
 		</p>
 	<center>
-	<img src="https://i.pinimg.com/originals/16/d6/ef/16d6ef2692f51116c8ea82b768b0a23a.jpg" 
-	alt="Feel Better Soon">
+	<img src="https://image.shutterstock.com/image-vector/stay-home-safe-lettering-typography-260nw-1675145770.jpg" 
+	alt="Stay safe">
 	</center> 
 <!-- the src specifies the url of the image and the alt sets a description for the image if it cannot be loaded. The center tags place the image in the center of whichever screen -->
 		
